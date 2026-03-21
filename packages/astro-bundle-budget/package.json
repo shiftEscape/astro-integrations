@@ -1,0 +1,59 @@
+{
+  "name": "astro-bundle-budget",
+  "version": "0.1.0",
+  "description": "Build-time JS/CSS bundle size budgets for Astro. Fails the build when pages exceed your thresholds.",
+  "keywords": [
+    "astro",
+    "astro-integration",
+    "withastro",
+    "bundle",
+    "performance",
+    "perf",
+    "budget",
+    "size",
+    "dev-toolbar",
+    "tooling"
+  ],
+  "homepage": "https://github.com/shiftescape/astro-bundle-budget#readme",
+  "bugs": {
+    "url": "https://github.com/shiftescape/astro-bundle-budget/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiftescape/astro-bundle-budget.git"
+  },
+  "author": {
+    "name": "Alvin James Bellero",
+    "email": "ajames.bellero@gmail.com",
+    "url": "https://github.com/shiftEscape"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "test": "tsc -p tsconfig.test.json && node --test dist-test/test/utils.test.js dist-test/test/check.test.js dist-test/test/integration.test.js",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "peerDependencies": {
+    "astro": "^4.0.0 || ^5.0.0 || ^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "astro": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

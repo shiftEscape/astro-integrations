@@ -1,0 +1,17 @@
+---
+// heavy-page.astro — forces a JS asset
+---
+<html>
+  <body>
+    <script>
+      // enough code to trigger a separate chunk
+      const data = Array.from({ length: 100 }, (_, i) => ({ id: i, name: `item-${i}` }))
+      console.log(data)
+    </script>
+    <style>
+      body { font-family: sans-serif; padding: 2rem; }
+      h1 { color: navy; }
+    </style>
+    <h1>Heavy page</h1>
+  </body>
+</html>

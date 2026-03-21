@@ -1,0 +1,8 @@
+{
+  "name": "astro-bundle-budget-workspace",
+  "private": true,
+  "workspaces": [
+    "demo",
+    "packages/*"
+  ]
+}

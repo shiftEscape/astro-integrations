@@ -1,0 +1,12 @@
+# Source — only ship compiled dist/
+src/
+test/
+dist-test/
+
+# Config files
+tsconfig*.json
+*.map
+
+# Dev files
+.DS_Store
+node_modules/
