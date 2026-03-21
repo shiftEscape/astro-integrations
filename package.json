@@ -4,5 +4,11 @@
   "workspaces": [
     "demo",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "test:pkg": "npm test --workspace=packages/astro-bundle-budget",
+    "build:pkg": "npm run build --workspace=packages/astro-bundle-budget",
+    "build:demo": "npm run build --workspace=demo",
+    "test:demo": "npm run build:pkg && npm run build:demo"
+  }
 }
