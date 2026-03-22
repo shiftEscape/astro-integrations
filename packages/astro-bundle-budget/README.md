@@ -1,4 +1,4 @@
-# 🚀 astro-bundle-budget
+# 📦 astro-bundle-budget
 
 Build-time JS/CSS bundle size budgets for Astro. Inspect every asset and page payload at the end of `astro build` — and optionally fail CI when you exceed your thresholds. 📊
 
@@ -147,11 +147,7 @@ Store this file as a CI artefact and diff it between builds to track bundle grow
 
 ## 📄 License
 
-MIT
-
-## 🤝 Contributing
-
-Issues and PRs welcome. For questions, find us in the [`#integrations` channel on the Astro Discord](https://astro.build/chat). 💬
+[MIT](https://github.com/shiftEscape/astro-bundle-budget/blob/main/packages/astro-bundle-budget/LICENSE)
 
 ## 🙏 Acknowledgements
 

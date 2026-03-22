@@ -1,4 +1,4 @@
-# 📦 astro-bundle-budget-workspace
+# 📦 astro-bundle-budget
 
 Monorepo for [`astro-bundle-budget`](https://www.npmjs.com/package/@shiftescape/astro-bundle-budget) — a build-time JS/CSS bundle size budget integration for Astro.
 
@@ -21,7 +21,7 @@ npm install
 
 ## ⚙️ Development workflow
 
-**1️⃣ Build the package** (required before testing in the demo):
+**Build the package** (required before testing in the demo):
 
 ```bash
 npm run build:pkg
@@ -33,13 +33,13 @@ Or keep it watching for changes in a separate terminal:
 cd packages/astro-bundle-budget && npm run dev
 ```
 
-**2️⃣ Run the demo build** to see the integration in action:
+**Run the demo build** to see the integration in action:
 
 ```bash
 npm run build:demo
 ```
 
-**3️⃣ Run both in one shot:**
+**Run both in one shot:**
 
 ```bash
 npm run test:demo
@@ -55,6 +55,7 @@ npm test --workspace=packages/astro-bundle-budget
 
 See [`packages/astro-bundle-budget/README.md`](./packages/astro-bundle-budget/README.md) for full usage docs, options, and examples.
 
-## 📄 License
+## 📄 Links
 
-MIT © [Alvin James Bellero](https://github.com/shiftEscape)
+- [Sponsor Me ❤️](https://github.com/sponsors/shiftEscape)
+- [Buy me a Coffee ☕️](https://buymeacoffee.com/shiftescapealvin)
