@@ -138,12 +138,12 @@ Store this file as a CI artefact and diff it between builds to track bundle grow
 
 |                     | astro-bundle-budget | vite-plugin-bundlesize | rollup-plugin-visualizer |
 | ------------------- | ------------------- | ---------------------- | ------------------------ |
-| Astro-native config | ✓                   | ✗ (Vite config)        | ✗                        |
-| Per-page breakdown  | ✓                   | ✗                      | ✗                        |
-| Fails the build     | ✓                   | ✓                      | ✗                        |
-| Compression budgets | ✓                   | ✓                      | ✗                        |
+| Astro-native config | ✅                  | ❌ (Vite config)       | ❌                       |
+| Per-page breakdown  | ✅                  | ❌                     | ❌                       |
+| Fails the build     | ✅                  | ✅                     | ❌                       |
+| Compression budgets | ✅                  | ✅                     | ❌                       |
 | Static HTML report  | JSON                | `bundlemeta.json`      | `stats.html`             |
-| Zero extra deps     | ✓                   | ✗                      | ✗                        |
+| Zero extra deps     | ✅                  | ❌                     | ❌                       |
 
 ## 📄 License
 
