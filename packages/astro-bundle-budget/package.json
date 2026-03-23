@@ -1,6 +1,6 @@
 {
   "name": "@shiftescape/astro-bundle-budget",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Build-time JS/CSS bundle size budgets for Astro. Fails the build when pages exceed your thresholds.",
   "keywords": [
     "astro",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shiftEscape/astro-integrations/issues"
+    "url": "git+https://github.com/shiftEscape/astro-integrations.git"
   },
   "author": {
     "name": "Alvin James Bellero",
