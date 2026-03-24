@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  # ── Test both packages on every push / PR ──────────────────────────────────
+  # ── Test all packages on every push / PR ───────────────────────────────────
   test-bundle-budget:
     name: Test astro-bundle-budget (Node ${{ matrix.node }})
     runs-on: ubuntu-latest
@@ -20,10 +20,8 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: npm
-      - name: Install workspace dependencies
-        run: npm ci
-      - name: Run tests
-        run: npm test --workspace=packages/astro-bundle-budget
+      - run: npm ci
+      - run: npm test --workspace=packages/astro-bundle-budget
 
   test-env-inspector:
     name: Test astro-env-inspector (Node ${{ matrix.node }})
@@ -37,16 +35,29 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: npm
-      - name: Install workspace dependencies
-        run: npm ci
-      - name: Run tests
-        run: npm test --workspace=packages/astro-env-inspector
+      - run: npm ci
+      - run: npm test --workspace=packages/astro-env-inspector
+
+  test-toolbar-routes:
+    name: Test astro-toolbar-routes (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["18", "20", "22"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm test --workspace=packages/astro-toolbar-routes
 
   # ── Publish astro-bundle-budget ────────────────────────────────────────────
-  # Triggered only by: release(astro-bundle-budget): vX.X.X
+  # Triggered by: release(astro-bundle-budget): vX.X.X
   publish-bundle-budget:
     name: Publish astro-bundle-budget
-    needs: [test-bundle-budget, test-env-inspector]
+    needs: [test-bundle-budget, test-env-inspector, test-toolbar-routes]
     runs-on: ubuntu-latest
     if: |
       github.ref == 'refs/heads/main' &&
@@ -58,21 +69,18 @@ jobs:
           node-version: "20"
           registry-url: "https://registry.npmjs.org"
           cache: npm
-      - name: Install workspace dependencies
-        run: npm ci
-      - name: Build package
-        run: npm run build --workspace=packages/astro-bundle-budget
-      - name: Publish to npm
-        run: npm publish --access public
+      - run: npm ci
+      - run: npm run build --workspace=packages/astro-bundle-budget
+      - run: npm publish --access public
         working-directory: packages/astro-bundle-budget
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   # ── Publish astro-env-inspector ────────────────────────────────────────────
-  # Triggered only by: release(astro-env-inspector): vX.X.X
+  # Triggered by: release(astro-env-inspector): vX.X.X
   publish-env-inspector:
     name: Publish astro-env-inspector
-    needs: [test-bundle-budget, test-env-inspector]
+    needs: [test-bundle-budget, test-env-inspector, test-toolbar-routes]
     runs-on: ubuntu-latest
     if: |
       github.ref == 'refs/heads/main' &&
@@ -84,12 +92,32 @@ jobs:
           node-version: "20"
           registry-url: "https://registry.npmjs.org"
           cache: npm
-      - name: Install workspace dependencies
-        run: npm ci
-      - name: Build package
-        run: npm run build --workspace=packages/astro-env-inspector
-      - name: Publish to npm
-        run: npm publish --access public
+      - run: npm ci
+      - run: npm run build --workspace=packages/astro-env-inspector
+      - run: npm publish --access public
         working-directory: packages/astro-env-inspector
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  # ── Publish astro-toolbar-routes ───────────────────────────────────────────
+  # Triggered by: release(astro-toolbar-routes): vX.X.X
+  publish-toolbar-routes:
+    name: Publish astro-toolbar-routes
+    needs: [test-bundle-budget, test-env-inspector, test-toolbar-routes]
+    runs-on: ubuntu-latest
+    if: |
+      github.ref == 'refs/heads/main' &&
+      startsWith(github.event.head_commit.message, 'release(astro-toolbar-routes):')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+          cache: npm
+      - run: npm ci
+      - run: npm run build --workspace=packages/astro-toolbar-routes
+      - run: npm publish --access public
+        working-directory: packages/astro-toolbar-routes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
