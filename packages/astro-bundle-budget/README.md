@@ -150,7 +150,3 @@ Store this file as a CI artefact and diff it between builds to track bundle grow
 ## 📄 License
 
 [MIT](https://github.com/shiftEscape/astro-integrations/blob/main/packages/astro-bundle-budget/LICENSE)
-
-## 🙏 Acknowledgements
-
-Built with the [Astro Integration API](https://docs.astro.build/en/reference/integrations-reference/) and listed in the [Astro Integrations Library](https://astro.build/integrations/). 🌟

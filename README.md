@@ -74,3 +74,7 @@ CI runs all tests first, then publishes only the matching package.
 ## License
 
 MIT © [Alvin James Bellero](https://github.com/shiftEscape)
+
+## 🙏 Acknowledgements
+
+Built with the [Astro Integration API](https://docs.astro.build/en/reference/integrations-reference/) and listed in the [Astro Integrations Library](https://astro.build/integrations/?search=%40shiftescape). 🌟
