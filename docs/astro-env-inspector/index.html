@@ -520,6 +520,151 @@
       .fade-up.visible {
         animation: fade-up 0.55s ease forwards;
       }
+
+      /* ── Mobile ── */
+      @media (max-width: 720px) {
+        .features {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding: 0 16px;
+        }
+
+        nav {
+          padding: 20px 0 18px;
+        }
+        .nav-links li:not(:last-child):not(:nth-last-child(2)) {
+          display: none;
+        }
+        .nav-links a {
+          padding: 5px 8px;
+          font-size: 11px;
+        }
+
+        .hero {
+          padding: 48px 0 40px;
+        }
+        .hero-eye {
+          margin-bottom: 18px;
+        }
+        .hero h1 {
+          margin-bottom: 20px;
+        }
+        .hero-sub {
+          font-size: 13px;
+          margin-bottom: 28px;
+        }
+        .hero-actions {
+          gap: 8px;
+        }
+        .btn {
+          font-size: 11px;
+          padding: 8px 14px;
+        }
+
+        .terminal {
+          margin: 32px 0;
+        }
+        .t-body {
+          padding: 14px 12px;
+          font-size: 11px;
+          line-height: 1.8;
+        }
+        .t-body pre {
+          font-size: 11px;
+        }
+
+        .section {
+          padding: 48px 0;
+        }
+        .sec-desc {
+          margin-bottom: 28px;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+        }
+        .feat {
+          padding: 18px 16px;
+        }
+
+        .opts thead {
+          display: none;
+        }
+        .opts tbody tr {
+          display: block;
+          padding: 14px 0;
+          border-bottom: 1px solid var(--border);
+        }
+        .opts tbody tr:last-child {
+          border-bottom: none;
+        }
+        .opts td {
+          display: block;
+          padding: 2px 0;
+          border-bottom: none;
+        }
+        .td-n {
+          font-size: 13px;
+          padding-bottom: 4px;
+        }
+        .td-t {
+          font-size: 11px;
+        }
+        .td-d {
+          font-size: 12px;
+          padding-top: 4px;
+        }
+        .td-t::before {
+          content: "type: ";
+          color: var(--dim);
+        }
+        .td-d:nth-child(3)::before {
+          content: "default: ";
+          color: var(--dim);
+        }
+
+        .install-row {
+          flex-wrap: wrap;
+          gap: 6px;
+          padding: 12px 14px;
+        }
+        .install-pm {
+          min-width: unset;
+        }
+        .install-cmd {
+          flex: 1 1 100%;
+          font-size: 11px;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+        .copy-btn {
+          display: none;
+        }
+
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+          padding: 24px 0 40px;
+        }
+        .footer-links {
+          gap: 14px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .nav-links {
+          display: none;
+        }
+        .t-body {
+          font-size: 10.5px;
+          padding: 10px 10px;
+        }
+      }
     </style>
   </head>
   <body>

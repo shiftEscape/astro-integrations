@@ -360,6 +360,72 @@
           transform: translateY(0);
         }
       }
+
+      /* ── Mobile ── */
+      @media (max-width: 600px) {
+        .page {
+          padding: 0 16px;
+        }
+
+        nav {
+          padding: 20px 0 18px;
+        }
+        .nav-link {
+          padding: 5px 8px;
+          font-size: 11px;
+        }
+
+        .hero {
+          padding: 52px 0 44px;
+        }
+        .hero h1 {
+          margin-bottom: 18px;
+        }
+        .hero-sub {
+          font-size: 13px;
+          margin-bottom: 28px;
+        }
+        .hero-ctas {
+          gap: 8px;
+        }
+        .btn {
+          font-size: 11px;
+          padding: 7px 13px;
+        }
+
+        .packages {
+          padding: 44px 0;
+        }
+        .card {
+          padding: 18px 16px;
+          gap: 12px;
+        }
+        .card-name {
+          font-size: 11px;
+        }
+        .card-desc {
+          font-size: 11px;
+        }
+
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+          padding: 22px 0 40px;
+        }
+        .footer-links {
+          gap: 14px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .hero h1 {
+          letter-spacing: -0.025em;
+        }
+        .card-name {
+          font-size: 10px;
+        }
+      }
     </style>
   </head>
   <body>
