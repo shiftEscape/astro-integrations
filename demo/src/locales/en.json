@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "pricing": "Pricing"
+  },
+  "hero": {
+    "title": "Astro integrations that actually help.",
+    "subtitle": "Focused, zero-dependency integrations for Astro. Each one solves a real developer pain point.",
+    "cta_primary": "View on GitHub",
+    "cta_secondary": "View on npm"
+  },
+  "packages": {
+    "heading": "Five tools. Zero fluff.",
+    "description": "Each integration is focused, dependency-free, and designed to disappear — showing up only when you need it."
+  },
+  "install": {
+    "heading": "Install in seconds.",
+    "description": "All five integrations work independently. Install only what you need."
+  },
+  "footer": {
+    "built_by": "Built by",
+    "license": "MIT License",
+    "links_github": "GitHub",
+    "links_npm": "npm",
+    "links_astro": "Astro integrations",
+    "newsletter": "Stay up to date"
+  }
+}

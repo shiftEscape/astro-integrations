@@ -34,6 +34,14 @@
         --violet-dim: rgba(167,139,250,.07);
         --emerald-dim:rgba(52,211,153,.07);
 
+        --amber:    #f59e0b;
+        --islands-accent: #f59e0b;
+        --islands-dim:    rgba(245,158,11,.07);
+
+        --rose:         #fb7185;
+        --i18n-accent:  #fb7185;
+        --i18n-dim:     rgba(251,113,133,.07);
+
         --ff:  'IBM Plex Sans', sans-serif;
         --ffm: 'IBM Plex Mono', monospace;
         --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-xl: 20px;
@@ -200,10 +208,10 @@
       /* ── Package cards ── */
       .packages {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
       }
-      @media (max-width: 760px) { .packages { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 600px) { .packages { grid-template-columns: 1fr; } }
       @media (max-width: 500px) { .packages { grid-template-columns: 1fr; } }
 
       .pkg-card {
@@ -223,7 +231,9 @@
       .pkg-card:hover::before { opacity: 1; }
       .pkg-card.budget::before { background: radial-gradient(ellipse at top left, var(--sky-dim), transparent 55%); }
       .pkg-card.env::before    { background: radial-gradient(ellipse at top left, var(--violet-dim), transparent 55%); }
-      .pkg-card.routes::before { background: radial-gradient(ellipse at top left, var(--emerald-dim), transparent 55%); }
+      .pkg-card.routes::before  { background: radial-gradient(ellipse at top left, var(--emerald-dim), transparent 55%); }
+      .pkg-card.islands::before { background: radial-gradient(ellipse at top left, var(--islands-dim), transparent 55%); }
+      .pkg-card.i18n::before    { background: radial-gradient(ellipse at top left, var(--i18n-dim),    transparent 55%); }
 
       .pkg-icon {
         width: 44px; height: 44px;
@@ -234,6 +244,8 @@
       .pkg-card.budget .pkg-icon { background: var(--sky-dim);     border: 1px solid rgba(56,189,248,.25); }
       .pkg-card.env    .pkg-icon { background: var(--violet-dim);  border: 1px solid rgba(167,139,250,.25); }
       .pkg-card.routes .pkg-icon { background: var(--emerald-dim); border: 1px solid rgba(52,211,153,.25); }
+      .pkg-card.islands .pkg-icon { background: var(--islands-dim);   border: 1px solid rgba(245,158,11,.25); }
+      .pkg-card.i18n    .pkg-icon { background: var(--i18n-dim);     border: 1px solid rgba(251,113,133,.25); }
 
       .pkg-name {
         font-family: var(--ffm);
@@ -243,6 +255,8 @@
       .pkg-card.budget .pkg-name { color: var(--sky); }
       .pkg-card.env    .pkg-name { color: var(--violet); }
       .pkg-card.routes .pkg-name { color: var(--emerald); }
+      .pkg-card.islands .pkg-name { color: var(--islands-accent); }
+      .pkg-card.i18n    .pkg-name { color: var(--i18n-accent); }
 
       .pkg-title {
         font-size: 20px; font-weight: 700;
@@ -322,7 +336,7 @@
       /* ── Features ── */
       .features {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 14px; margin-top: 48px;
       }
       @media (max-width: 700px) { .features { grid-template-columns: 1fr 1fr; } }
@@ -355,11 +369,11 @@
       /* ── Install ── */
       .install-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px; margin-top: 48px;
       }
-      @media (max-width: 740px) { .install-grid { grid-template-columns: 1fr 1fr; } }
-      @media (max-width: 480px) { .install-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 500px) { .install-grid { grid-template-columns: 1fr; } }
+      
 
       .install-card {
         background: var(--bg-card);
@@ -381,7 +395,9 @@
       }
       .install-card.budget .install-pkg { color: var(--sky); }
       .install-card.env    .install-pkg { color: var(--violet); }
-      .install-card.routes .install-pkg { color: var(--emerald); }
+      .install-card.routes .install-pkg  { color: var(--emerald); }
+      .install-card.islands .install-pkg { color: var(--islands-accent); }
+      .install-card.i18n    .install-pkg { color: var(--i18n-accent); }
 
       .install-badge {
         font-size: 10px; font-weight: 600;
@@ -397,12 +413,12 @@
         display: flex; flex-direction: column; gap: 8px;
       }
 
-      .install-cmd { display: flex; align-items: center; gap: 10px; }
+      .install-cmd { display: flex; flex-direction: column; align-items: stretch; gap: 8px; width: 100%; }
 
       .install-pm {
         font-family: var(--ffm);
         font-size: 11px; color: var(--muted);
-        min-width: 32px;
+        display: block;
       }
 
       .install-code {
@@ -411,13 +427,17 @@
         background: var(--bg-pill);
         border: 1px solid var(--border);
         border-radius: var(--r-sm);
-        padding: 7px 12px; flex: 1;
+        padding: 7px 12px;
         font-size: 12px; overflow-x: auto;
         white-space: nowrap;
+        width: 100%;
+        box-sizing: border-box;
       }
       .install-card.budget .install-code span { color: var(--sky); }
       .install-card.env    .install-code span { color: var(--violet); }
-      .install-card.routes .install-code span { color: var(--emerald); }
+      .install-card.routes .install-code span  { color: var(--emerald); }
+      .install-card.islands .install-code span { color: var(--islands-accent); }
+      .install-card.i18n    .install-code span { color: var(--i18n-accent); }
 
       /* ── Footer ── */
       footer {
@@ -459,7 +479,7 @@
       <section class="hero">
         <div class="hero-pill">
           <span class="hero-pill-dot"></span>
-          3 packages · open source · MIT license
+          4 packages · Open Source · MIT license
         </div>
         <h1>Astro integrations<br />that <em>actually help.</em></h1>
         <p class="hero-sub">
@@ -480,7 +500,7 @@
       <!-- Packages -->
       <section class="section">
         <p class="section-eyebrow">Packages</p>
-        <h2 class="section-title">Three tools. Zero fluff.</h2>
+        <h2 class="section-title">Four tools. Zero fluff.</h2>
         <p class="section-desc">Each integration is focused, dependency-free, and designed to disappear — showing up only when you need it.</p>
 
         <div class="packages">
@@ -532,6 +552,22 @@
               <a href="https://github.com/shiftEscape/astro-toolbar-routes" target="_blank" rel="noopener" class="pkg-link">docs ↗</a>
             </div>
           </div>
+          <div class="pkg-card i18n">
+            <div class="pkg-icon">🌐</div>
+            <div class="pkg-name">@shiftescape/astro-i18n-toolkit</div>
+            <div class="pkg-title">i18n Toolkit</div>
+            <p class="pkg-desc">Dev toolbar i18n debugger — translation coverage map across all locales and a one-click locale switcher. Library-agnostic: works with any JSON/YAML setup.</p>
+            <div class="pkg-pills">
+              <span class="pill">dev-only</span>
+              <span class="pill">coverage map</span>
+              <span class="pill">locale switcher</span>
+            </div>
+            <div class="pkg-links">
+              <a href="https://www.npmjs.com/package/@shiftescape/astro-i18n-toolkit" target="_blank" rel="noopener" class="pkg-link">npm ↗</a>
+              <a href="https://github.com/shiftEscape/astro-i18n-toolkit" target="_blank" rel="noopener" class="pkg-link">docs ↗</a>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -650,11 +686,47 @@
         </div>
       </section>
 
+      <!-- i18n Toolkit preview -->
+      <section class="section">
+        <p class="section-eyebrow">astro-i18n-toolkit</p>
+        <h2 class="section-title">Translation gaps,<br />caught before they ship.</h2>
+        <p class="section-desc">Click the globe icon in the dev toolbar. Every translation key is scanned across all locale files and shown as complete, fallback, or missing — plus a one-click locale switcher.</p>
+
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+            <span class="terminal-title">i18n Toolkit — dev toolbar</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="t-dim">  Coverage map</span>  <span class="t-err">✗ 3 missing</span>  <span class="t-warn">~ 1 fallback</span>  <span class="t-dim">18 keys total</span></div>
+            <br />
+            <div><span class="t-dim">  Locale     Complete  </span></div>
+            <div>  <span class="t-key">fr      </span>  <span class="t-ok">94%</span>  <span class="t-dim">17/18</span></div>
+            <div>  <span class="t-key">de      </span>  <span class="t-warn">83%</span>  <span class="t-dim">15/18</span></div>
+            <div>  <span class="t-key">es      </span>  <span class="t-err">72%</span>  <span class="t-dim">13/18</span></div>
+            <br />
+            <div><span class="t-err">  ✗</span>  <span class="t-str">nav.contact        </span>  <span class="t-err">missing: de, es</span></div>
+            <div><span class="t-err">  ✗</span>  <span class="t-str">footer.newsletter   </span>  <span class="t-err">missing: es</span></div>
+            <div><span class="t-warn">  ~</span>  <span class="t-str">hero.subtitle       </span>  <span class="t-warn">fallback: de</span></div>
+            <div><span class="t-ok">  ✓</span>  <span class="t-str">nav.home            </span>  <span class="t-dim">complete</span></div>
+          </div>
+        </div>
+
+        <div class="features">
+          <div class="feat"><span class="feat-icon">🗺</span><div class="feat-title">Coverage map</div><p class="feat-desc">Every key colour-coded: green for complete, amber for fallback, red for missing — per locale.</p></div>
+          <div class="feat"><span class="feat-icon">📊</span><div class="feat-title">Per-locale %</div><p class="feat-desc">Coverage percentage badge per locale so you know at a glance which locales need the most work.</p></div>
+          <div class="feat"><span class="feat-icon">🌐</span><div class="feat-title">Locale switcher</div><p class="feat-desc">One click switches the active locale via a cookie + middleware redirect. No URL editing required.</p></div>
+          <div class="feat"><span class="feat-icon">🔍</span><div class="feat-title">Searchable keys</div><p class="feat-desc">Filter keys by name or reference value in real time across all locales.</p></div>
+          <div class="feat"><span class="feat-icon">⚙️</span><div class="feat-title">Library-agnostic</div><p class="feat-desc">Reads JSON or YAML files directly. Works alongside any i18n library — or none at all.</p></div>
+          <div class="feat"><span class="feat-icon">🔒</span><div class="feat-title">Dev-only</div><p class="feat-desc">Middleware and toolbar stripped completely in <code>astro build</code>. Zero production footprint.</p></div>
+        </div>
+      </section>
+
       <!-- Install -->
       <section class="section">
         <p class="section-eyebrow">Get started</p>
         <h2 class="section-title">Install in seconds.</h2>
-        <p class="section-desc">All three integrations work independently. Install only what you need.</p>
+        <p class="section-desc">All five integrations work independently. Install only what you need.</p>
 
         <div class="install-grid">
           <div class="install-card budget">
@@ -704,6 +776,23 @@
               <div class="install-cmd">
                 <span class="install-pm">pnpm</span>
                 <div class="install-code">pnpm add -D <span>@shiftescape/astro-toolbar-routes</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="install-card i18n">
+            <div class="install-header">
+              <span class="install-pkg">astro-i18n-toolkit</span>
+              <span class="install-badge">dev toolbar</span>
+            </div>
+            <div class="install-body">
+              <div class="install-cmd">
+                <span class="install-pm">npm</span>
+                <div class="install-code">npm i -D <span>@shiftescape/astro-i18n-toolkit</span></div>
+              </div>
+              <div class="install-cmd">
+                <span class="install-pm">pnpm</span>
+                <div class="install-code">pnpm add -D <span>@shiftescape/astro-i18n-toolkit</span></div>
               </div>
             </div>
           </div>

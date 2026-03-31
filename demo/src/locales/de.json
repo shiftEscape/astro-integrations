@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "blog": "Blog",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Astro-Integrationen, die wirklich helfen.",
+    "cta_primary": "Auf GitHub ansehen",
+    "cta_secondary": "Auf npm ansehen"
+  },
+  "packages": {
+    "heading": "Fünf Werkzeuge. Kein Schnickschnack.",
+    "description": "Jede Integration ist fokussiert, abhängigkeitsfrei und so konzipiert, dass sie unsichtbar bleibt."
+  },
+  "install": {
+    "heading": "In Sekunden installiert."
+  },
+  "footer": {
+    "built_by": "Erstellt von",
+    "license": "MIT-Lizenz",
+    "links_github": "GitHub",
+    "links_npm": "npm"
+  }
+}

@@ -15,6 +15,7 @@
     "astro": "^6.0.8",
     "@shiftescape/astro-bundle-budget": "*",
     "@shiftescape/astro-env-inspector": "*",
-    "@shiftescape/astro-toolbar-routes": "*"
+    "@shiftescape/astro-toolbar-routes": "*",
+    "@shiftescape/astro-i18n-toolkit": "*"
   }
 }

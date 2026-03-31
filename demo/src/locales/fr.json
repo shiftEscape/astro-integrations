@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "blog": "Blog",
+    "contact": "Contact",
+    "pricing": "Tarifs"
+  },
+  "hero": {
+    "title": "Des intégrations Astro vraiment utiles.",
+    "subtitle": "Des intégrations légères et sans dépendances pour Astro. Chacune résout un vrai problème de développeur.",
+    "cta_primary": "Voir sur GitHub",
+    "cta_secondary": "Voir sur npm"
+  },
+  "packages": {
+    "heading": "Cinq outils. Zéro superflu.",
+    "description": "Chaque intégration est ciblée, sans dépendances et conçue pour s'effacer — disponible uniquement quand vous en avez besoin."
+  },
+  "install": {
+    "heading": "Installation en quelques secondes.",
+    "description": "Les cinq intégrations fonctionnent indépendamment. Installez uniquement ce dont vous avez besoin."
+  },
+  "footer": {
+    "built_by": "Créé par",
+    "license": "Licence MIT",
+    "links_github": "GitHub",
+    "links_npm": "npm",
+    "links_astro": "Intégrations Astro"
+  }
+}
