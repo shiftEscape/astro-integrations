@@ -401,7 +401,7 @@
       }
       @media (max-width: 640px) {
         .features {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
         }
       }
 
@@ -579,6 +579,170 @@
       .fade-up.visible {
         animation: fade-up 0.55s ease forwards;
       }
+
+      /* ── Mobile ─────────────────────────────────────────────────────── */
+
+      /* Tablet — collapse feature grid to 2 cols */
+      @media (max-width: 720px) {
+        .features {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        /* Page padding */
+        .page {
+          padding: 0 16px;
+        }
+
+        /* Nav — hide text links, show only github + npm as icon-only */
+        nav {
+          padding: 20px 0 18px;
+        }
+
+        .nav-links li:not(:last-child):not(:nth-last-child(2)) {
+          display: none;
+        }
+        .nav-links a {
+          padding: 5px 8px;
+          font-size: 11px;
+        }
+
+        /* Hero */
+        .hero {
+          padding: 48px 0 40px;
+        }
+        .hero-eyebrow {
+          margin-bottom: 18px;
+        }
+        .hero h1 {
+          margin-bottom: 20px;
+        }
+        .hero-sub {
+          font-size: 13px;
+          margin-bottom: 28px;
+        }
+        .hero-actions {
+          gap: 8px;
+        }
+        .btn {
+          font-size: 11px;
+          padding: 8px 14px;
+        }
+
+        /* Terminal wrap */
+        .terminal-wrap {
+          margin: 32px 0;
+        }
+        .t-body {
+          padding: 16px 14px;
+          font-size: 11px;
+        }
+        .t-body pre {
+          font-size: 11px;
+        }
+
+        /* Sections */
+        .section {
+          padding: 48px 0;
+        }
+        .section-desc {
+          margin-bottom: 28px;
+        }
+
+        /* Feature grid — 1 col on small mobile */
+        .features {
+          grid-template-columns: 1fr;
+        }
+        .feat {
+          padding: 18px 16px;
+        }
+
+        /* Options table — stack into definition-list style */
+        .opts-table thead {
+          display: none;
+        }
+        .opts-table tbody tr {
+          display: block;
+          padding: 14px 0;
+          border-bottom: 1px solid var(--border);
+        }
+        .opts-table tbody tr:last-child {
+          border-bottom: none;
+        }
+        .opts-table td {
+          display: block;
+          padding: 2px 0;
+          border-bottom: none;
+        }
+        .td-name {
+          font-size: 13px;
+          padding-bottom: 4px;
+        }
+        .td-type {
+          font-size: 11px;
+        }
+        .td-def {
+          font-size: 11px;
+        }
+        .td-desc {
+          font-size: 12px;
+          padding-top: 4px;
+          color: var(--sub);
+        }
+        .td-type::before {
+          content: "type: ";
+          color: var(--dim);
+        }
+        .td-def::before {
+          content: "default: ";
+          color: var(--dim);
+        }
+
+        /* Install rows — stack pm + cmd vertically, hide copy btn */
+        .install-row {
+          flex-wrap: wrap;
+          gap: 6px;
+          padding: 12px 14px;
+        }
+        .install-pm {
+          min-width: unset;
+        }
+        .install-cmd {
+          flex: 1 1 100%;
+          font-size: 11px;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+        .copy-btn {
+          display: none;
+        }
+
+        /* Footer */
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+          padding: 24px 0 40px;
+        }
+        .footer-links {
+          gap: 14px;
+        }
+      }
+
+      /* Very small — tighten further */
+      @media (max-width: 380px) {
+        .nav-links {
+          display: none;
+        }
+        .hero h1 {
+          letter-spacing: -0.03em;
+        }
+        .t-body {
+          font-size: 10.5px;
+          padding: 12px 10px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -587,7 +751,7 @@
     <div class="page">
       <!-- Nav -->
       <nav>
-        <a href="/" class="nav-logo">
+        <a href="../" class="nav-logo">
           <span class="nav-logo-dot"></span>
           astro-bundle-budget
         </a>
