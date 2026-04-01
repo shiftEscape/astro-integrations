@@ -1,6 +1,6 @@
 {
   "name": "@shiftescape/astro-i18n-toolkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dev toolbar integration for Astro that shows a live i18n debugger — translation coverage map across all locales and a one-click locale switcher, library-agnostic.",
   "keywords": [
     "astro",

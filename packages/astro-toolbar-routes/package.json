@@ -1,6 +1,6 @@
 {
   "name": "@shiftescape/astro-toolbar-routes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Dev toolbar integration for Astro that shows a live, clickable route map of your entire project — grouped, searchable, and active only in development.",
   "keywords": [
     "astro",

@@ -1,6 +1,6 @@
 {
   "name": "@shiftescape/astro-bundle-budget",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Build-time JS/CSS bundle size budgets for Astro. Fails the build when pages exceed your thresholds.",
   "keywords": [
     "astro",
