@@ -1,6 +1,8 @@
 # astro-integrations
 
-A collection of Astro integrations by [@shiftEscape](https://github.com/shiftEscape).
+[![CI](https://github.com/shiftEscape/astro-integrations/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/shiftEscape/astro-integrations/actions/workflows/ci.yml)
+
+📦 A collection of Astro integrations by [@shiftEscape](https://github.com/shiftEscape).
 
 ## Packages
 
